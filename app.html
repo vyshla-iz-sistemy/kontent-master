@@ -1676,7 +1676,7 @@ async function startPaymentKM(tier){
   document.getElementById('pay-loading').textContent='⏳ Создаю платёж...';
   const priceMap={basic:299,pro:599,annual:5999};
   const labelMap={basic:'Контент-Мастер — Базовый (1 мес)',pro:'Контент-Мастер — Про (1 мес)',annual:'Контент-Мастер — Про (12 мес)'};
-  const returnUrl='https://uliarabocaa75-bot.github.io/kontent-master/app.html?payment_status=succeeded&product=km&tier='+tier+'&payment_id={payment.id}';
+  const returnUrl='https://vyshla-iz-sistemy.github.io/kontent-master/app.html?payment_status=succeeded&product=km&tier='+tier+'&payment_id={payment.id}';
   try{
     const { data:{session} } = await _kmSb.auth.getSession();
     const resp=await fetch(KM_YK_EDGE,{
@@ -1781,7 +1781,7 @@ async function doMagicLinkKM(){
   if(!email){ _kmAuthMsg('Введите email','err'); return; }
   _kmAuthMsg('Отправляем ссылку...');
   try{
-    const { error }=await _kmSb.auth.signInWithOtp({email,options:{emailRedirectTo:'https://uliarabocaa75-bot.github.io/kontent-master/app.html'}});
+    const { error }=await _kmSb.auth.signInWithOtp({email,options:{emailRedirectTo:'https://vyshla-iz-sistemy.github.io/kontent-master/app.html'}});
     if(error){ _kmAuthMsg(error.message,'err'); return; }
     _kmAuthMsg('✓ Ссылка для входа отправлена на '+email,'ok');
   }catch(e){ _kmAuthMsg('Ошибка','err'); }
